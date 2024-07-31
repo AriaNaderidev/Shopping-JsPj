@@ -59,7 +59,7 @@ body {
   align-items: center;
   width: fit-content;
   justify-self: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 #right_side #log_in {
@@ -96,7 +96,9 @@ body {
 }
 
 #search_container #search_inp {
-  padding: 5px;
+  padding: 10px;
+  width: 250px;
+  height: 40px;
   border: 1px solid #b6b6b6;
   border-radius: 1rem;
   transition: all 0.3s ease-in-out;
@@ -105,10 +107,16 @@ body {
   pointer-events: none;
 }
 
+#search_container #search_inp:focus {
+  border: 1px solid rgba(65, 63, 168, 0.664);
+  outline: none;
+}
+
 #search_container #search_btn {
   transition: all 0.3s ease-in-out;
   color: var(--desc_color);
   font-size: x-large;
+  font-size: 30px;
 }
 
 /* ----------------------------------------end of header */
