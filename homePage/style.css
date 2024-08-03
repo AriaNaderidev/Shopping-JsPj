@@ -154,14 +154,15 @@ body {
   width: 85%;
   height: 70%;
   border-radius: 3%;
-  box-shadow: 15px 15px 10px 3px rgb(139, 139, 139);
+
   transition: all 0.3s ease-in;
+  object-fit: contain;
 }
 
-#trend_product img:hover {
+/* #trend_product img:hover {
   scale: 1.05;
   box-shadow: 0px 0px 0px 0px;
-}
+} */
 
 /* #trend_product img:hover #trend_product {
   scale: 1.05;
@@ -224,6 +225,7 @@ body {
   border-radius: 3%;
   box-shadow: 15px 15px 10px 3px rgb(139, 139, 139);
   transition: all 0.3s ease-in;
+  object-fit: contain;
 }
 
 .products img:hover {

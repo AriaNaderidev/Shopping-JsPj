@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.boxContainer {
+  position: relative;
+  border-radius: 5px;
+  top: 50px;
+  left: -140px;
+  display: inline-block;
+}
+
+.boxContainer div {
+  width: 200px;
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+  position: relative;
+  left: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+  border: solid black 0px;
+  cursor: pointer;
+}
+
+.boxContainer div:nth-child(1) {
+  background-color: rgb(65, 65, 65);
+}
+
+.boxContainer div:nth-child(1):hover {
+  left: 130px;
+  justify-content: center;
+}
+
+.boxContainer div:nth-child(2) {
+  background-color: rgb(97, 97, 97);
+}
+
+.boxContainer div:nth-child(2):hover {
+  left: 130px;
+  justify-content: center;
+}
+
+.boxContainer div:nth-child(3) {
+  background-color: rgb(133, 133, 133);
+}
+
+.boxContainer div:nth-child(3):hover {
+  left: 130px;
+  justify-content: center;
+}
+
+.boxContainer div:nth-child(4) {
+  background-color: rgb(180, 180, 180);
+}
+
+.boxContainer div:nth-child(4):hover {
+  left: 130px;
+  justify-content: center;
+}
+
+/* ---------------------------------------------end of menu */
+#main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main table {
+  width: 70%;
+  height: 60%;
+  border-radius: 20px;
+  padding: 2%;
+  text-align: center;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
+  font-size: 1.4em;
+}
+
+#main table th {
+  background-color: rgb(206, 206, 206);
+  font-weight: bolde;
+  color: white;
+}
+
+#main table th:nth-child(1) {
+  border-radius: 10px 0px 0px 0px;
+}
+
+#main table th:nth-last-child(1) {
+  border-radius: 0px 10px 0px 0px;
+}
+
+#main table tr {
+  border-bottom: 1px solid rgba(173, 173, 173, 0.658);
+  border-bottom-style: dashed;
+}
+
+#main table tr:nth-last-child(1) {
+  border-bottom: 0px;
+}
