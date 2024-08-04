@@ -2,6 +2,9 @@ let searchBtn = document.querySelector("#search_btn");
 let searchBtnChecking;
 let searchInp = document.querySelector("#search_inp");
 let searchContainer = document.querySelector("#search_container");
+let hamberIcon = document.querySelector("#hamber_menu");
+let tarMenu = document.querySelector("#tra_menu");
+let crossIcon = document.querySelector("#cross");
 
 const searchBtnEffect = () => {
   searchBtn.style.scale = 1.2;
@@ -21,3 +24,14 @@ const searchBtnEffect = () => {
 };
 
 searchBtn.addEventListener("click", searchBtnEffect);
+
+const openTraMenu = () => {
+  tarMenu.style.left = 0;
+};
+
+const closeTraMenu = () => {
+  tarMenu.style.left = -100 + "%";
+};
+
+hamberIcon.addEventListener("click", openTraMenu);
+crossIcon.addEventListener("click", closeTraMenu);
