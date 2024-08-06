@@ -12,86 +12,88 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <div id="header">
-      <div id="products_menu">
+    <div id="main_container">
+      <div id="header">
+        <div id="products_menu">
+          <span>Shoes</span>
+          <span>Gym supplements</span>
+          <span>Toys</span>
+        </div>
+        <i class="fa-solid fa-bars" id="hamber_menu"></i>
+
+        <div id="right_side">
+          <div id="search_container">
+            <input id="search_inp" type="search" placeholder="search..." />
+            <i class="fa-solid fa-magnifying-glass" id="search_btn"></i>
+          </div>
+
+          <div id="btn_box">
+            <button id="log_in">Log in</button>
+            <button id="small_login">
+              <i class="fa-solid fa-right-to-bracket" id="login_logo"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="tra_menu">
+        <i class="fa-regular fa-circle-xmark" id="cross"></i>
         <span>Shoes</span>
         <span>Gym supplements</span>
         <span>Toys</span>
       </div>
-      <i class="fa-solid fa-bars" id="hamber_menu"></i>
+      <!-- ------------------------------------------end of header--------------------------------------------- -->
 
-      <div id="right_side">
-        <div id="search_container">
-          <input id="search_inp" type="search" placeholder="search..." />
-          <i class="fa-solid fa-magnifying-glass" id="search_btn"></i>
-        </div>
-
-        <div id="btn_box">
-          <button id="log_in">Log in</button>
-          <button id="small_login">
-            <i class="fa-solid fa-right-to-bracket" id="login_logo"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="tra_menu">
-      <i class="fa-regular fa-circle-xmark" id="cross"></i>
-      <span>Shoes</span>
-      <span>Gym supplements</span>
-      <span>Toys</span>
-    </div>
-    <!-- ------------------------------------------end of header--------------------------------------------- -->
-
-    <div id="products_panel">
-      <div id="products_view">
-        <section id="trend_product">
-          <img
-            src="products-pics/9de6f35879130069f20a1403e732a3a5.jpg"
-            alt="trend_product"
-          />
-          <div class="info">
-            <h1 id="title">Rolex</h1>
-            <h3>1000$</h3>
-            <h3>Accessory</h3>
-          </div>
-        </section>
-
-        <div id="products_list">
-          <section class="products" id="cart1">
-            <img src="products-pics/watch1.jpg" alt="G-shock" />
+      <div id="products_panel">
+        <div id="products_view">
+          <section id="trend_product">
+            <img
+              src="products-pics/9de6f35879130069f20a1403e732a3a5.jpg"
+              alt="trend_product"
+            />
             <div class="info">
-              <h1 id="title">G-shock</h1>
-              <h3>24000$</h3>
-              <h3>Accessory</h3>
-            </div>
-          </section>
-          <section class="products" id="cart2">
-            <img src="products-pics/watch2.jpg" alt="Casio" />
-            <div class="info">
-              <h1 id="title">Casio</h1>
+              <h1 id="title">Rolex</h1>
               <h3>1000$</h3>
               <h3>Accessory</h3>
             </div>
           </section>
-          <section class="products" id="cart3">
-            <img src="products-pics/watch3.jpg" alt="helly" />
-            <div class="info">
-              <h1 id="title">Helly</h1>
-              <h3>1000$</h3>
-              <h3>500$</h3>
-              <h3>Accessory</h3>
-            </div>
-          </section>
 
-          <div id="products_desc">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur, inventore. Necessitatibus aperiam numquam, incidunt
-              consequuntur qui odit corporis quidem quo amet ducimus eligendi
-              sapiente aliquid blanditiis sequi soluta consectetur quos.
-            </p>
-            <div id="btn_box">
-              <button id="log_in">Log in</button>
+          <div id="products_list">
+            <section class="products" id="cart1">
+              <img src="products-pics/watch1.jpg" alt="G-shock" />
+              <div class="info">
+                <h1 id="title">G-shock</h1>
+                <h3>24000$</h3>
+                <h3>Accessory</h3>
+              </div>
+            </section>
+            <section class="products" id="cart2">
+              <img src="products-pics/watch2.jpg" alt="Casio" />
+              <div class="info">
+                <h1 id="title">Casio</h1>
+                <h3>1000$</h3>
+                <h3>Accessory</h3>
+              </div>
+            </section>
+            <section class="products" id="cart3">
+              <img src="products-pics/watch3.jpg" alt="helly" />
+              <div class="info">
+                <h1 id="title">Helly</h1>
+                <h3>1000$</h3>
+                <h3>500$</h3>
+                <h3>Accessory</h3>
+              </div>
+            </section>
+
+            <div id="products_desc">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aspernatur, inventore. Necessitatibus aperiam numquam, incidunt
+                consequuntur qui odit corporis quidem quo amet ducimus eligendi
+                sapiente aliquid blanditiis sequi soluta consectetur quos.
+              </p>
+              <div id="btn_box">
+                <button id="log_in">Log in</button>
+              </div>
             </div>
           </div>
         </div>
