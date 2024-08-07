@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <script src="main.js" defer></script>
   </head>
   <body>
     <main id="main">
+      <i class="fa-solid fa-bars" id="hamber_menu"></i>
+      <div id="tra_menu">
+        <i class="fa-regular fa-circle-xmark" id="cross"></i>
+        <span>Products</span>
+        <span>Users</span>
+        <span>Discount</span>
+        <span id="home">Home</span>
+      </div>
       <table>
         <tr>
           <th>Id</th>
@@ -18,32 +30,20 @@
           <th>Role</th>
         </tr>
         <tr>
-          <td>1</td>
-          <td>Aria</td>
-          <td>arianaderi249@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>admin</td>
+          <td data-label="Id">1</td>
+          <td data-label="Username">Aria</td>
+          <td data-label="E-mail">
+            cdsccdsssssssssssssssdcsssssssssssssssssss
+          </td>
+          <td data-label="Bio">heyim</td>
+          <td data-label="Role">admin</td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>mmd</td>
-          <td>csacsa111@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>user</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>reza</td>
-          <td>dcasd44@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>user</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>abol</td>
-          <td>sscds1321313@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>user</td>
+          <td data-label="Id">2</td>
+          <td data-label="Username">mmd</td>
+          <td data-label="E-mail">cdsc</td>
+          <td data-label="Bio">heyim</td>
+          <td data-label="Role">user</td>
         </tr>
       </table>
     </main>
