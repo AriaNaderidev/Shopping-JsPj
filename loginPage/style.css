@@ -14,70 +14,55 @@ html {
 }
 
 #main {
-  width: 60%;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#main table {
-  width: 70%;
-  height: 60%;
-  border-radius: 20px;
-  padding: 2%;
-  text-align: center;
-  border-collapse: collapse;
-  box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
-  font-size: 1.4em;
-}
-
-#main table th {
-  background-color: rgb(3, 35, 53);
-  font-weight: bolde;
-  color: white;
-}
-
-#main table th:nth-child(1) {
-  border-radius: 10px 0px 0px 0px;
-}
-
-#main table th:nth-last-child(1) {
-  border-radius: 0px 10px 0px 0px;
-}
-
-#main table tr {
-  border-bottom: 1px solid rgba(173, 173, 173, 0.658);
-  border-bottom-style: dashed;
-}
-
-#main table tr:nth-last-child(1) {
-  border-bottom: 0px;
-}
-
-/* --------------------------------------------------end of main----------------------------------- */
-
-aside {
-  width: 40%;
+  width: 100%;
   height: 100%;
-  position: absolute;
-  right: 0;
+  position: relative;
+  padding: 10px;
+}
+
+
+
+#hamber_menu {
+  font-size: 1.7em;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#tra_menu {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 44, 44, 0.952);
+  color: #ebebeb;
+  position: fixed;
+  left: -100%;
   top: 0;
+  z-index: 1000;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#tra_menu #cross {
+  align-self: flex-start;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.7em;
+  cursor: pointer;
 }
 
 #form_container {
-  width: 60%;
-  height: 70%;
-  background-color: rgb(3, 35, 53);
-  border-radius: 3%;
+  width: 90%;
+  height: 85%;
+  border-radius: 10px;
+  position: relative;
 }
 
 #login_form {
-  height: 520px;
-  width: 400px;
+  height: 100%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
   transform: translate(-50%, -50%);
@@ -135,14 +120,50 @@ aside {
   cursor: pointer;
 }
 
-/* -------------------------------------end of aside and log in menu -------------------------------- */
+/* -------------------------------------end of login tra menu -------------------------------- */
+
+#main table {
+  width: 70%;
+  height: 50%;
+  border-radius: 20px;
+  padding: 2%;
+  text-align: center;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
+  font-size: 1.4em;
+}
+
+#main table th {
+  background-color: rgb(3, 35, 53);
+  font-weight: bolde;
+  color: white;
+  text-align: center;
+}
+
+#main table th:nth-child(1) {
+  border-radius: 10px 0px 0px 0px;
+}
+
+#main table th:nth-last-child(1) {
+  border-radius: 0px 10px 0px 0px;
+}
+
+#main table tr {
+  border-bottom: 1px solid rgba(173, 173, 173, 0.658);
+  border-bottom-style: dashed;
+}
+
+#main table tr:nth-last-child(1) {
+  border-bottom: 0px;
+}
 
 #user_wishlist {
+  display: none;
   width: 60%;
   height: 30%;
   position: absolute;
   bottom: 0;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-evenly;
   gap: 2%;
@@ -170,4 +191,4 @@ aside {
   font-size: 2em;
 }
 
-/* ---------------------------------------end of wish list----------------------------------
+/* ---------------------------------------end of wish list and table----------------------------------
