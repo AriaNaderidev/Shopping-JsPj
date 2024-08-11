@@ -13,189 +13,473 @@ html {
   width: 100%;
 }
 
-#main {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  padding: 10px;
+@media only screen and (max-width: 768px) {
+  #main {
+    min-width: 100%;
+    min-height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+  }
+
+  #hamber_menu {
+    font-size: 1.7em;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  #tra_menu {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 44, 44, 0.952);
+    color: #ebebeb;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #tra_menu #cross {
+    align-self: flex-start;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+  }
+
+  #form_container {
+    width: 90%;
+    height: 85%;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  #login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+  }
+
+  #login_form * {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+  }
+
+  #login_form h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+  }
+
+  #login_form label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  #login_form input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  #login_form ::placeholder {
+    color: #e5e5e5;
+  }
+
+  #login_form button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* -------------------------------------end of login tra menu -------------------------------- */
+
+  #table_container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  #table_container table {
+    width: 100%;
+    border-radius: 20px;
+    padding: 2%;
+    text-align: center;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
+    font-size: 1.1em;
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+
+  #table_container table th {
+    background-color: rgb(206, 206, 206);
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  #table_container table td {
+    padding: 5px 10px;
+  }
+
+  #table_container table th:nth-child(1) {
+    border-radius: 10px 0px 0px 0px;
+  }
+
+  #table_container table th:nth-last-child(1) {
+    border-radius: 0px 10px 0px 0px;
+  }
+
+  #table_container table tr {
+    border-bottom: 1px solid rgba(173, 173, 173, 0.658);
+    border-bottom-style: dashed;
+  }
+
+  #table_container table tr:nth-last-child(1) {
+    border-bottom: 0px;
+  }
+
+  #user_wishlist {
+    width: 95%;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2%;
+    overflow: auto;
+    flex-wrap: wrap;
+    justify-self: flex-end;
+  }
+
+  .fav_product {
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .fav_product img {
+    border-radius: 10%;
+    width: 20%;
+    height: 20%;
+  }
+
+  .heart {
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+
+  /* ---------------------------------------end of wish list and table----------------------------------*/
 }
 
+@media only screen and (min-width: 768px) {
+  #main {
+    min-width: 100%;
+    min-height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+  }
 
+  #hamber_menu {
+    font-size: 2.6em;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
 
-#hamber_menu {
-  font-size: 1.7em;
-  cursor: pointer;
-  margin-bottom: 10px;
+  #tra_menu {
+    width: 70%;
+    height: 100%;
+    background-color: rgba(44, 44, 44, 0.952);
+    color: #ebebeb;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #tra_menu #cross {
+    align-self: flex-start;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 3em;
+    cursor: pointer;
+  }
+
+  #form_container {
+    width: 90%;
+    height: 70%;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  #login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+  }
+
+  #login_form * {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+  }
+
+  #login_form h3 {
+    font-size: 4em;
+    font-weight: 500;
+    line-height: 2em;
+    text-align: center;
+  }
+
+  #login_form label {
+    display: block;
+    margin-top: 30px;
+    font-size: 2em;
+    font-weight: 500;
+  }
+
+  #login_form input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 2.2em;
+    font-weight: 300;
+  }
+
+  #login_form ::placeholder {
+    color: #e5e5e5;
+    font-size: 0.6em;
+  }
+
+  #login_form button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 2em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* -------------------------------------end of login tra menu -------------------------------- */
+
+  #table_container {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  #table_container table {
+    width: 100%;
+    border-radius: 20px;
+    padding: 2%;
+    text-align: center;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
+    font-size: 1.9em;
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+
+  #table_container table th {
+    background-color: rgb(206, 206, 206);
+    font-weight: bold;
+    font-size: 1.3em;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  #table_container table td {
+    padding: 5px 10px;
+  }
+
+  #table_container table th:nth-child(1) {
+    border-radius: 10px 0px 0px 0px;
+  }
+
+  #table_container table th:nth-last-child(1) {
+    border-radius: 0px 10px 0px 0px;
+  }
+
+  #table_container table tr {
+    border-bottom: 1px solid rgba(173, 173, 173, 0.658);
+    border-bottom-style: dashed;
+  }
+
+  #table_container table tr:nth-last-child(1) {
+    border-bottom: 0px;
+  }
+
+  #user_wishlist {
+    width: 95%;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2%;
+    overflow: auto;
+    flex-wrap: wrap;
+    justify-self: flex-end;
+  }
+
+  .fav_product {
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+
+  .fav_product img {
+    border-radius: 10%;
+    width: 20%;
+    height: 20%;
+  }
+
+  .heart {
+    cursor: pointer;
+    font-size: 1.8em;
+  }
+
+  /* ---------------------------------------end of wish list and table----------------------------------*/
 }
 
-#tra_menu {
-  width: 375px;
-  height: 667px;
-  background-color: rgba(44, 44, 44, 0.952);
-  color: #ebebeb;
-  position: fixed;
-  left: -100%;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
+@media only screen and (min-width: 1000px) {
+  #tra_menu #cross {
+    align-self: flex-start;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 3.5em;
+    cursor: pointer;
+  }
 
-#tra_menu #cross {
-  align-self: flex-start;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 1.7em;
-  cursor: pointer;
-}
+  #login_form h3 {
+    font-size: 3.4em;
+    font-weight: 500;
+    line-height: 3em;
+    text-align: center;
+  }
 
-#form_container {
-  width: 90%;
-  height: 85%;
-  border-radius: 10px;
-  position: relative;
-}
+  #login_form label {
+    display: block;
+    margin-top: 30px;
+    font-size: 2.5em;
+    font-weight: 500;
+  }
 
-#login_form {
- 
-  height: 100%;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.13);
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  padding: 50px 35px;
-}
-#login_form * {
-  font-family: "Poppins", sans-serif;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-  outline: none;
-  border: none;
-}
-#login_form h3 {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 42px;
-  text-align: center;
-}
+  #login_form input {
+    height: 80px;
+    font-size: 2em;
+  }
 
-#login_form label {
-  display: block;
-  margin-top: 30px;
-  font-size: 16px;
-  font-weight: 500;
-}
-#login_form input {
-  display: block;
-  height: 50px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.07);
-  border-radius: 3px;
-  padding: 0 10px;
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 300;
-}
-#login_form ::placeholder {
-  color: #e5e5e5;
-}
-#login_form button {
-  margin-top: 50px;
-  width: 100%;
-  background-color: #ffffff;
-  color: #080710;
-  padding: 15px 0;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  #login_form ::placeholder {
+    font-size: 0.8em;
+  }
 
-/* -------------------------------------end of login tra menu -------------------------------- */
+  #login_form button {
+    margin-top: 45px;
+    padding: 20px 0;
+    font-size: 2em;
+  }
 
-#main table {
-  width: 70%;
-  max-height: 40%;
-  border-radius: 20px;
-  padding: 2%;
-  text-align: center;
-  border-collapse: collapse;
-  box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
-  font-size: 1.1em;
-  position: absolute;
+  /* -------------------------------------end of login tra menu -------------------------------- */
 
+  #table_container table {
+    width: 100%;
+    height: 40vh;
+    font-size: 1.6em;
+  }
+
+  #user_wishlist {
+    width: 80%;
+    height: 23vh;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2%;
+    overflow: auto;
+    flex-wrap: wrap;
+    justify-self: flex-end;
+  }
+  /* ---------------------------------------end of wish list and table----------------------------------*/
 }
-
-#main table th {
-  background-color: rgb(206, 206, 206);
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  padding: 15px 20px;
-}
-
-#main table td {
-  padding: 5px 10px;
-}
-
-#main table th:nth-child(1) {
-  border-radius: 10px 0px 0px 0px;
-}
-
-#main table th:nth-last-child(1) {
-  border-radius: 0px 10px 0px 0px;
-}
-
-#main table tr {
-  border-bottom: 1px solid rgba(173, 173, 173, 0.658);
-  border-bottom-style: dashed;
-}
-
-#main table tr:nth-last-child(1) {
-  border-bottom: 0px;
-}
-
-#user_wishlist {
-  width: 60%;
-  height: 30%;
-  position: absolute;
-  bottom: 0;
-  /* display: flex; */
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 2%;
-  overflow: auto;
-  flex-wrap: wrap;
-}
-
-.fav_product {
-  width: auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 1px solid #e5e5e5;
-  border-radius: 20px;
-  padding: 10px;
-}
-
-.fav_product img {
-  border-radius: 10%;
-  width: 20%;
-  height: 20%;
-}
-
-#like_btn {
-  font-size: 2em;
-}
-
-/* ---------------------------------------end of wish list and table----------------------------------
