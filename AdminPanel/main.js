@@ -66,4 +66,4 @@ const addNewProductTOTable = () => {
   location.href = "/AdminPanel/add-product-form/index.html";
 };
 
-addBtn.addEventListener("click", addNewProductTOTable());
+addBtn.addEventListener("click", addNewProductTOTable);
