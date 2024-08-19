@@ -14,112 +14,268 @@ html {
   position: relative;
 }
 
+/* Extra small devices (phones, 600px and down) */
 main {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+  display: none;
 }
 
 .boxContainer {
-  position: relative;
-  border-radius: 5px;
-  top: 50px;
-  left: -140px;
-  display: inline-block;
+  display: none;
 }
 
-.boxContainer div {
-  width: 200px;
-  height: 60px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  transition-duration: 0.5s;
-  position: relative;
-  left: 0;
+#hamber_menu {
+  font-size: 1.7em;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+#tra_menu {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 44, 44, 0.952);
+  color: #ebebeb;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#tra_menu span {
+  height: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
-  color: white;
-  border: solid black 0px;
+  justify-content: center;
+  border-bottom: 1px solid #b6b6b6;
+  font-size: 1.4em;
   cursor: pointer;
 }
 
-.boxContainer div:nth-child(1) {
-  background-color: rgb(65, 65, 65);
+#tra_menu #home {
+  border-bottom: 0px;
 }
 
-.boxContainer div:nth-child(1):hover {
-  left: 130px;
-  justify-content: center;
+#tra_menu span:nth-last-child(1) {
+  border-bottom: 0px;
 }
 
-.boxContainer div:nth-child(2) {
-  background-color: rgb(97, 97, 97);
-}
-
-.boxContainer div:nth-child(2):hover {
-  left: 130px;
-  justify-content: center;
-}
-
-.boxContainer div:nth-child(3) {
-  background-color: rgb(133, 133, 133);
-}
-
-.boxContainer div:nth-child(3):hover {
-  left: 130px;
-  justify-content: center;
-}
-
-.boxContainer div:nth-child(4) {
-  background-color: rgb(180, 180, 180);
-}
-
-.boxContainer div:nth-child(4):hover {
-  left: 130px;
-  justify-content: center;
+#tra_menu #cross {
+  align-self: flex-start;
+  margin: 20px 0px 0px 20px;
+  font-size: 1.7em;
+  cursor: pointer;
 }
 
 /* ---------------------------------------------end of menu */
+
 #main {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  right: 0px;
+  min-width: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  position: relative;
 }
 
-#main table {
-  width: 70%;
-  height: 60%;
-  border-radius: 20px;
-  padding: 2%;
+#table_container {
+  width: 100%;
+  overflow-x: auto;
+  position: absolute;
+  top: 15%;
+}
+
+#table_container table {
+  width: 100%;
+  padding: 10px;
   text-align: center;
   border-collapse: collapse;
   box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
-  font-size: 1.4em;
+  font-size: 1em;
+  border-radius: 10px;
 }
 
-#main table th {
+#table_container table th {
   background-color: rgb(206, 206, 206);
-  font-weight: bolde;
+  font-weight: bold;
+  text-align: center;
   color: white;
+  font-size: 1.2em;
+  border: 1px solid white;
+  padding: 10px;
 }
 
-#main table th:nth-child(1) {
+#table_container table td {
+  padding-left: 50px;
+  position: relative;
+  padding: 10px;
+}
+
+#table_container table th:nth-child(1) {
   border-radius: 10px 0px 0px 0px;
 }
 
-#main table th:nth-last-child(1) {
+#table_container table th:nth-last-child(1) {
   border-radius: 0px 10px 0px 0px;
 }
 
-#main table tr {
-  border-bottom: 1px solid rgba(173, 173, 173, 0.658);
-  border-bottom-style: dashed;
+#add_btn {
+  color: rgb(8, 8, 8);
+  border: none;
+  outline: none;
+  width: 30%;
+  max-width: 150px;
+  padding: 10px 5px;
+  font-size: 1em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3.5px;
+  font-weight: bold;
+  position: absolute;
+  right: 5%;
+  top: 2%;
 }
 
-#main table tr:nth-last-child(1) {
-  border-bottom: 0px;
+#add_btn,
+#add_btn2:hover {
+  scale: 1.1;
+  transition: all 0.3s ease-in-out;
+}
+
+#add_btn2 {
+  display: none;
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #add_btn {
+    display: none;
+  }
+
+  #hamber_menu {
+    display: none;
+  }
+
+  #tra_menu {
+    display: none;
+  }
+
+  #cross {
+    display: none;
+  }
+
+  main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .boxContainer {
+    position: relative;
+    border-radius: 5px;
+    top: 10px;
+    left: -140px;
+    display: inline-block;
+  }
+
+  .boxContainer div {
+    width: 200px;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    position: relative;
+    left: 0;
+    display: flex;
+    align-items: center;
+    color: white;
+    border: solid black 0px;
+    cursor: pointer;
+  }
+
+  .boxContainer div:nth-child(1) {
+    background-color: rgb(65, 65, 65);
+  }
+
+  .boxContainer div:nth-child(1):hover {
+    left: 130px;
+    justify-content: center;
+  }
+
+  .boxContainer div:nth-child(2) {
+    background-color: rgb(97, 97, 97);
+  }
+
+  .boxContainer div:nth-child(2):hover {
+    left: 130px;
+    justify-content: center;
+  }
+
+  .boxContainer div:nth-child(3) {
+    background-color: rgb(133, 133, 133);
+  }
+
+  .boxContainer div:nth-child(3):hover {
+    left: 130px;
+    justify-content: center;
+  }
+
+  .boxContainer div:nth-child(4) {
+    background-color: rgb(180, 180, 180);
+  }
+
+  .boxContainer div:nth-child(4):hover {
+    left: 130px;
+    justify-content: center;
+  }
+
+  /* ---------------------------------------------end of menu */
+  #main {
+    position: absolute;
+    right: 0px;
+  }
+
+  #table_container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    top: 5%;
+  }
+
+  #table_container table {
+    width: 80%;
+    height: 60%;
+    padding: 2%;
+    font-size: 1.4em;
+  }
+
+  #add_btn2 {
+    display: block;
+    color: rgb(8, 8, 8);
+    border: 1px solid black;
+    width: 30%;
+    max-width: 150px;
+    padding: 10px 5px;
+    font-size: 1em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3.5px;
+    font-weight: bold;
+    position: fixed;
+    left: 11%;
+    top: 9%;
+  }
+
+  #add_btn {
+    width: 10%;
+    left: 11%;
+    top: 5%;
+  }
 }

@@ -1,17 +1,50 @@
-// let users = document.querySelector("#users");
-// let discount = document.querySelector("#discount");
-// let product = document.querySelector("#product");
-
-// users.addEventListener("click", "showUserTable()");
-
-// const showUserTable = () => {
-//   console.log("hi");
-// };
-
 let homeBtn = document.querySelector("#home");
+let tarMenu = document.querySelector("#tra_menu");
+let crossIcon = document.querySelector("#cross");
+let body = document.querySelector("body");
+let hamberIcon = document.querySelector("#hamber_menu");
 
 const redirectTOHomePage = () => {
   location.href = "/homePage/index.html";
 };
 
 homeBtn.addEventListener("click", redirectTOHomePage);
+
+const openTraMenu = () => {
+  tarMenu.style.left = 0;
+  body.style.overflow = "hidden";
+};
+
+const closeTraMenu = () => {
+  tarMenu.style.left = -100 + "%";
+  body.style.overflow = "auto";
+};
+
+hamberIcon.addEventListener("click", openTraMenu);
+crossIcon.addEventListener("click", closeTraMenu);
+// end of css transition javaScript code ---------------------------------------------------------
+
+let addBtn = document.querySelector("#add_btn");
+let addBtn2 = document.querySelector("#add_btn2");
+let table = document.querySelector("#table");
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+if (products.length)
+  products.forEach((product) => {
+    table.innerHTML += `<tr>
+    <td>${product.id}</td>
+    <td>${product.title}</td>
+    <td>${product.price}</td>
+    <td>${product.discount}</td>
+    <td>${product.category}</td>
+    <td>${product.exist ? "Exist" : "Not exist"}</td>
+    <td>${product.desc}</td>
+    </tr>`;
+  });
+
+const addNewProductTOTable = () => {
+  location.href = "/AdminPanel/add-product-form/index.html";
+};
+
+addBtn.addEventListener("click", addNewProductTOTable);
+addBtn2.addEventListener("click", addNewProductTOTable);

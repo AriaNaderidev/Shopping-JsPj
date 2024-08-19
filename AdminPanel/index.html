@@ -5,52 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <script src="main.js" defer></script>
   </head>
   <body>
     <main id="main">
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Username</th>
-          <th>E-mail</th>
-          <th>Bio</th>
-          <th>Role</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Aria</td>
-          <td>arianaderi249@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>admin</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>mmd</td>
-          <td>csacsa111@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>user</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>reza</td>
-          <td>dcasd44@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>user</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>abol</td>
-          <td>sscds1321313@gmail.com</td>
-          <td>hey , im using this website!</td>
-          <td>user</td>
-        </tr>
-      </table>
+      <i class="fa-solid fa-bars" id="hamber_menu"></i>
+      <div id="tra_menu">
+        <i class="fa-regular fa-circle-xmark" id="cross"></i>
+        <span>Products</span>
+        <span>Users</span>
+        <span>Discount</span>
+        <span id="home">Home</span>
+        <button id="add_btn">Add Product</button>
+      </div>
+      <button id="add_btn2">Add Product</button>
+      <div id="table_container">
+        <table id="table">
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Category</th>
+            <th>Exist</th>
+            <th>Description</th>
+          </tr>
+        </table>
+      </div>
     </main>
     <div class="boxContainer">
+      <div class="item">Products</div>
       <div class="item">Users</div>
       <div class="item">Discount</div>
-      <div class="item">Products</div>
       <div class="item" id="home">Home</div>
     </div>
   </body>
