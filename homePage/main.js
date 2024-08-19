@@ -36,3 +36,14 @@ const closeTraMenu = () => {
 
 hamberIcon.addEventListener("click", openTraMenu);
 crossIcon.addEventListener("click", closeTraMenu);
+//-------------------------------------------------------------end of elements animation
+let productsView = document.querySelector("#products_view");
+
+const insertProductsToPageView = () => {
+
+
+
+
+};
+
+document.addEventListener("DOMContentLoaded", insertProductsToPageView);
