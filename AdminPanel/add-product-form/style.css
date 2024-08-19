@@ -44,6 +44,12 @@ form input {
   transition: all 0.5s ease-in-out;
 }
 
+form #title {
+  padding: 3% 0%;
+  width: 60% !important;
+  max-width: 330px !important;
+}
+
 form input:focus {
   border-bottom: 1px solid rgb(54, 54, 54);
   background-color: #ffffff;
@@ -57,6 +63,11 @@ fieldset {
   outline: none;
   border: none;
   font-size: 0.9em;
+  pointer-events: none;
+}
+
+#title_field_set {
+  width: 58%;
 }
 
 .formSec {
@@ -178,6 +189,10 @@ form button {
   justify-content: center;
 }
 
+.exit {
+  display: inline-block;
+}
+
 button:hover {
   background-size: 500% 500%;
   color: white;
@@ -221,6 +236,10 @@ button:hover::after {
   #category {
     font-size: 0.7em;
   }
+
+  .exit {
+    display: none;
+  }
 }
 
 @media (min-width: 1000px) and (orientation: landscape) {
@@ -228,6 +247,10 @@ button:hover::after {
     width: 40%;
     height: 90%;
     font-size: 1.2em;
+  }
+
+  .exit {
+    display: none;
   }
 
   .desc_container {

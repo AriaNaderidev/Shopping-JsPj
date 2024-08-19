@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <script src="main.js" defer></script>
   </head>
   <body>
-    <form action="">
+    <form action="" id="form">
       <h2>Add Product</h2>
       <section class="formSec">
         <div class="div_container">
-          <input type="text" name="id" id="id" />
-          <fieldset><legend>ID:</legend></fieldset>
-        </div>
-        <div class="div_container">
-          <input type="text" name="title" id="title" />
-          <fieldset><legend>Title/Brand</legend></fieldset>
+          <input type="text" name="title" id="title" required />
+          <fieldset id="title_field_set"><legend>Title/Brand</legend></fieldset>
         </div>
       </section>
       <section class="formSec">
         <div class="div_container">
-          <input type="number" name="price" id="price" />
-          <fieldset><legend>Price:</legend></fieldset>
+          <input type="number" name="price" id="price" required />
+          <fieldset><legend>Price</legend></fieldset>
         </div>
         <div class="div_container">
-          <input type="number" name="discount" id="discount" />
+          <input type="number" name="discount" id="discount" required />
           <fieldset><legend>Discount</legend></fieldset>
         </div>
       </section>
@@ -37,16 +37,22 @@
             <option class="op" value="Toys">Toys</option>
             <option class="op" value="T-shirt">T-Shirt</option>
           </select>
-          <fieldset><legend>Category:</legend></fieldset>
+          <fieldset><legend>Category</legend></fieldset>
         </div>
         <div class="div_container exist_container">
-          <input type="radio" name="exist" id="exist" checked />
-          <fieldset id="exist_label"><legend>Exist:</legend></fieldset>
+          <input
+            type="checkbox"
+            name="exist"
+            id="exist"
+            checked
+            value="Exist"
+          />
+          <fieldset id="exist_label"><legend>Exist</legend></fieldset>
         </div>
       </section>
       <div class="desc_container">
         <textarea name="desc" id="desc" cols="40" rows="5"></textarea>
-        <fieldset id="desc_field"><legend>Description:</legend></fieldset>
+        <fieldset id="desc_field"><legend>Description</legend></fieldset>
       </div>
       <button>Add</button>
     </form>
