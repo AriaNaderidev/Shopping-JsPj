@@ -38,12 +38,31 @@ hamberIcon.addEventListener("click", openTraMenu);
 crossIcon.addEventListener("click", closeTraMenu);
 //-------------------------------------------------------------end of elements animation
 let productsView = document.querySelector("#products_view");
+let adminPanelBtn = document.querySelector("#adminPanel");
 
 const insertProductsToPageView = () => {
+  let products = JSON.parse(localStorage.getItem("products")) || [];
 
+  if (products.length)
+    products.forEach((product) => {
+      productsView.innerHTML += `
+      
+      <section class="products">
+        <img src="products-pics/wristwatch2.jpg" alt="product" />
+        <div class="info">
+        <h1 id="title">${product.title}</h1>
+        <h3>${product.price}$</h3>
+        <h3>${product.category}</h3>
+        </div>
+      </section>
 
-
-
+      `;
+    });
 };
 
+const redirectToAdminPanel = () => {
+  location.href = "/AdminPanel/index.html";
+};
+
+adminPanelBtn.addEventListener("click", redirectToAdminPanel);
 document.addEventListener("DOMContentLoaded", insertProductsToPageView);
