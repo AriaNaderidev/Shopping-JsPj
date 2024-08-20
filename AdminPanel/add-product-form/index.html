@@ -12,21 +12,24 @@
     <script src="main.js" defer></script>
   </head>
   <body>
+    <div class="errorBox">
+      <span class="errorMessage">You should fill information fields!</span>
+    </div>
     <form action="" id="form">
       <h2>Add Product</h2>
       <section class="formSec">
         <div class="div_container">
-          <input type="text" name="title" id="title" required />
+          <input type="text" name="title" id="title" />
           <fieldset id="title_field_set"><legend>Title/Brand</legend></fieldset>
         </div>
       </section>
       <section class="formSec">
         <div class="div_container">
-          <input type="number" name="price" id="price" required />
+          <input type="number" name="price" id="price" />
           <fieldset><legend>Price</legend></fieldset>
         </div>
         <div class="div_container">
-          <input type="number" name="discount" id="discount" required />
+          <input type="number" name="discount" id="discount" />
           <fieldset><legend>Discount</legend></fieldset>
         </div>
       </section>
