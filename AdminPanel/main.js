@@ -1,14 +1,17 @@
-let homeBtn = document.querySelector("#home");
+let homeBtn = document.querySelectorAll("#home");
 let tarMenu = document.querySelector("#tra_menu");
 let crossIcon = document.querySelector("#cross");
 let body = document.querySelector("body");
 let hamberIcon = document.querySelector("#hamber_menu");
+let productsView = document.querySelector("#main");
 
 const redirectTOHomePage = () => {
   location.href = "/homePage/index.html";
 };
 
-homeBtn.addEventListener("click", redirectTOHomePage);
+homeBtn.forEach((btn) => {
+  btn.addEventListener("click", redirectTOHomePage);
+});
 
 const openTraMenu = () => {
   tarMenu.style.left = 0;
@@ -34,8 +37,8 @@ if (products.length)
     table.innerHTML += `<tr>
     <td>${product.id}</td>
     <td>${product.title}</td>
-    <td>${product.price}</td>
-    <td>${product.discount}</td>
+    <td>${product.price}$</td>
+    <td>${product.discount}%</td>
     <td>${product.category}</td>
     <td>${product.exist ? "Exist" : "Not exist"}</td>
     <td>${product.desc}</td>
@@ -48,3 +51,24 @@ const addNewProductTOTable = () => {
 
 addBtn.addEventListener("click", addNewProductTOTable);
 addBtn2.addEventListener("click", addNewProductTOTable);
+//-----------------------------------------------------------end of showing products
+let productsBtns = document.querySelectorAll(".products");
+let usersBtns = document.querySelectorAll(".users");
+
+const showProductsTable = () => {
+  productsView.style.display = "flex";
+  addBtn.style.display = "block";
+};
+
+const showUsersTable = () => {
+  productsView.style.display = "none";
+  addBtn.style.display = "none";
+};
+
+productsBtns.forEach((btn) => {
+  btn.addEventListener("click", showProductsTable);
+});
+
+usersBtns.forEach((btn) => {
+  btn.addEventListener("click", showUsersTable);
+});

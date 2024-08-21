@@ -22,6 +22,20 @@ body {
   margin-top: 100px;
 }
 /* -----------------------------------media query---------------------------------- */
+.discounted-price {
+  text-decoration: line-through;
+}
+
+.hideDiscount {
+  display: none;
+}
+
+.showDiscount {
+  position: absolute;
+  bottom: 7%;
+  left: 22%;
+  font-size: 0.9em;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {

@@ -45,23 +45,30 @@ const insertProductsToPageView = () => {
 
   if (products.length)
     products.forEach((product) => {
+      let priceClassName = product.discount ? "discounted-price" : "";
+      let discountedPriceClassName =
+        product.discount <= 0 || !product.discount
+          ? "hideDiscount"
+          : "showDiscount";
+      let discountNumber = (product.price * product.discount) / 100;
+      let newPrice = product.price - discountNumber;
+
       productsView.innerHTML += `
-      
       <section class="products">
         <img src="products-pics/wristwatch2.jpg" alt="product" />
         <div class="info">
         <h1 id="title">${product.title}</h1>
-        <h3>${product.price}$</h3>
+        <h3 class="${priceClassName}">${product.price}$</h3>
+        <h3 class="${discountedPriceClassName}">${newPrice}$</h3>
         <h3>${product.category}</h3>
         </div>
       </section>
-
       `;
     });
 };
 
 const redirectToAdminPanel = () => {
-  location.href = "/AdminPanel/index.html";
+  location.href = "../AdminPanel/index.html";
 };
 
 adminPanelBtn.addEventListener("click", redirectToAdminPanel);

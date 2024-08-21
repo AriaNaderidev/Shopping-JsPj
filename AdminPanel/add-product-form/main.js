@@ -13,8 +13,8 @@ const addProduct = (e) => {
   const newProduct = {
     id: products.length > 0 ? products.at(-1).id + 1 : 1,
     title: title.value.trim(),
-    price: +price.value.trim(),
-    discount: +discount.value.trim(),
+    price: +price.value,
+    discount: +discount.value,
     exist: exist.checked,
     category: category.value,
     desc: (desc.value.trim().length === 0 ? "_" : desc.value).trim(),
@@ -26,8 +26,12 @@ const addProduct = (e) => {
     price.value.trim() === "" ||
     discount.value.trim() === ""
   ) {
+    errorMessage.textContent = "You should fill information fields!";
     errorBox.style.display = "flex";
-    isValide = false;
+  } else if (0 > discount.value || discount.value > 100) {
+    errorMessage.textContent =
+      "Discount field value should be between 0 - 100!";
+    errorBox.style.display = "flex";
   } else {
     errorBox.style.display = "none";
     products.push(newProduct);

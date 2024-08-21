@@ -12,16 +12,15 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <main id="main">
-      <i class="fa-solid fa-bars" id="hamber_menu"></i>
-      <div id="tra_menu">
-        <i class="fa-regular fa-circle-xmark" id="cross"></i>
-        <span>Products</span>
-        <span>Users</span>
-        <span>Discount</span>
-        <span id="home">Home</span>
-        <button id="add_btn">Add Product</button>
-      </div>
+    <i class="fa-solid fa-bars" id="hamber_menu"></i>
+    <div id="tra_menu">
+      <i class="fa-regular fa-circle-xmark" id="cross"></i>
+      <span class="products">Products</span>
+      <span class="users">Users</span>
+      <span id="home">Home</span>
+      <button id="add_btn">Add Product</button>
+    </div>
+    <div id="main">
       <button id="add_btn2">Add Product</button>
       <div id="table_container">
         <table id="table">
@@ -36,11 +35,26 @@
           </tr>
         </table>
       </div>
-    </main>
+    </div>
+    <!-- <div id="main">
+      <button id="add_btn2">Add Product</button>
+      <div id="table_container">
+        <table id="table">
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Category</th>
+            <th>Exist</th>
+            <th>Description</th>
+          </tr>
+        </table>
+      </div>
+    </div> -->
     <div class="boxContainer">
-      <div class="item">Products</div>
-      <div class="item">Users</div>
-      <div class="item">Discount</div>
+      <div class="item products">Products</div>
+      <div class="item users">Users</div>
       <div class="item" id="home">Home</div>
     </div>
   </body>
