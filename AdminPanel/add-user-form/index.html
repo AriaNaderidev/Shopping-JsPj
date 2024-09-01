@@ -11,5 +11,43 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
   </head>
-  <body></body>
+  <body>
+    <div class="errorBox">
+      <span class="errorMessage"></span>
+    </div>
+    <form action="" id="form">
+      <h2>Add User</h2>
+      <section class="formSec">
+        <div class="div_container">
+          <input type="text" name="user-name" id="userName" />
+          <fieldset><legend>Username</legend></fieldset>
+        </div>
+        <div class="div_container">
+          <input type="password" name="password" id="password" />
+          <fieldset><legend>Password</legend></fieldset>
+        </div>
+      </section>
+      <section class="formSec">
+        <div class="div_container">
+          <input type="text" name="full-name" id="fullName" />
+          <fieldset><legend>Full name</legend></fieldset>
+        </div>
+        <div class="div_container">
+          <input type="email" name="email" id="email" />
+          <fieldset><legend>Email</legend></fieldset>
+        </div>
+      </section>
+      <section class="sexSec">
+        <div class="div_container">
+          <select name="sex" id="sex">
+            <option class="op" value="Male">Male</option>
+            <option class="op" value="Female">Female</option>
+            <option class="op" value="Prefer not to say">Prefer not to say</option>
+          </select>
+          <fieldset><legend>Sex</legend></fieldset>
+        </div>
+      </section>
+      <button>Add</button>
+    </form>
+  </body>
 </html>
