@@ -1,7 +1,6 @@
 let form = document.querySelector("#form");
 let errorMessage = document.querySelector(".errorMessage");
 let errorBox = document.querySelector(".errorBox");
-let isValide = true;
 
 const addProduct = (e) => {
   e.preventDefault();
