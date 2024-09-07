@@ -32,14 +32,19 @@ let addBtn = document.querySelector("#add_btn");
 let addBtn2 = document.querySelector("#add_btn2");
 let addUserBtn = document.querySelector("#add_user_btn");
 let addUserBtn2 = document.querySelector("#add_user_btn2");
-let table = document.querySelector("#table");
-let tableTwo = document.querySelector(".tableTwo");
-let products = JSON.parse(localStorage.getItem("products")) || [];
-let users = JSON.parse(localStorage.getItem("users")) || [];
-
-if (products.length || users.length) {
+let table = document.querySelector(".table");
+let tableTwo = document.querySelector("#tableTwo");
+let tBodyUsers = document.querySelector("#tBody_users");
+let tbodyProducts = document.querySelector("#tBody_products");
+//---------------------
+let productsData = JSON.parse(localStorage.getItem("products")) || [];
+let usersData = JSON.parse(localStorage.getItem("users")) || [];
+//-------------------------- render users
+const renderUser = (users) => {
+  tBodyUsers.innerHTML = "";
   users.forEach((user) => {
-    tableTwo.innerHTML += `<tr>
+    tBodyUsers.innerHTML += `<tr>
+  <td><i class="fa-solid fa-pencil" id="updateUser" onClick="updateUserRow(${user.id})"></i><i class="fa-solid fa-trash delete" onClick="deleteUserRow(${user.id})" id="deleteUser"></i></td>
   <td>${user.id}</td>
   <td>${user.userName}</td>
   <td>${user.fullName}</td>
@@ -47,9 +52,34 @@ if (products.length || users.length) {
   <td>${user.sex}</td>
   </tr>`;
   });
+};
+//------------------------------------delete user
+const deleteUserRow = (userID) => {
+  const dataUsers = JSON.parse(localStorage.getItem("users"));
+  const updatedUsers = dataUsers.filter((item) => item.id !== userID);
+  addUpdatedUsersToLocalStorage(updatedUsers);
+};
 
+function addUpdatedUsersToLocalStorage(data) {
+  localStorage.setItem("users", JSON.stringify(data));
+  renderUser(data);
+}
+renderUser(usersData);
+//-------------------------------------------------update user
+
+const updateUserRow = (userID) => {
+  window.location.href = `./add-user-form/index.html?updateUser=${userID}`;
+};
+//-------------------------------------render products
+const renderProducts = (products) => {
+  tbodyProducts.innerHTML = "";
   products.forEach((product) => {
-    table.innerHTML += `<tr>
+    tbodyProducts.innerHTML += `<tr>
+    <td><i class="fa-solid fa-pencil" id="updatePro" onClick="updateProductRow(${
+      product.id
+    })"></i><i class="fa-solid fa-trash delete" onClick="deleteProductRow(${
+      product.id
+    })" id="deletePro"></i></td>
     <td>${product.id}</td>
     <td>${product.title}</td>
     <td>${product.price}$</td>
@@ -59,8 +89,25 @@ if (products.length || users.length) {
     <td>${product.desc}</td>
     </tr>`;
   });
-}
+};
+//-----------------------------------delete product
+const deleteProductRow = (productID) => {
+  const dataProducts = JSON.parse(localStorage.getItem("products"));
+  const updatedProducts = dataProducts.filter((item) => item.id !== productID);
+  addUpdatedProductsToLocalStorage(updatedProducts);
+};
 
+function addUpdatedProductsToLocalStorage(data) {
+  localStorage.setItem("products", JSON.stringify(data));
+  renderProducts(data);
+}
+renderProducts(productsData);
+//---------------------------------------------update product
+const updateProductRow = (productID) => {
+  window.location.href = `./add-product-form/index.html?updateProduct=${productID}`;
+};
+//-
+//---------------------------------------
 const addNewProductTOTable = () => {
   location.href = "/AdminPanel/add-product-form/index.html";
 };

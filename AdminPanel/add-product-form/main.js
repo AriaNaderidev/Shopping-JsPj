@@ -1,13 +1,20 @@
 let form = document.querySelector("#form");
 let errorMessage = document.querySelector(".errorMessage");
 let errorBox = document.querySelector(".errorBox");
+const products = JSON.parse(localStorage.getItem("products")) || [];
+
+const selectFunction = () => {
+  if (form.elements.title.value == "")
+    form.addEventListener("submit", addProduct);
+  else form.addEventListener("submit", updateProductHanlder);
+};
+
+document.addEventListener("DOMContentLoaded", selectFunction);
 
 const addProduct = (e) => {
   e.preventDefault();
 
   const { title, price, discount, exist, category, desc } = e.target.elements;
-
-  const products = JSON.parse(localStorage.getItem("products")) || [];
 
   const newProduct = {
     id: products.length > 0 ? products.at(-1).id + 1 : 1,
@@ -46,5 +53,45 @@ const addProduct = (e) => {
   }
 };
 
-form.addEventListener("submit", addProduct);
 //-------------------------------------------------------end of adding new product
+
+const findSelectedproduct = () => {
+  const { title, price, discount, exist, category, desc } = form.elements;
+  const params = new URLSearchParams(window.location.search);
+  let productId = params.get("updateProduct");
+
+  if (productId) {
+    let selectedproduct = products.find((product) => product.id == productId);
+    //--------------------------------------------------put selected product in form inputs =>
+    title.value = selectedproduct.title;
+    price.value = selectedproduct.price;
+    discount.value = selectedproduct.discount;
+    exist.value = selectedproduct.exist;
+    category.value = selectedproduct.category;
+    desc.value = selectedproduct.desc;
+  }
+};
+
+const updateProductHanlder = (e) => {
+  e.preventDefault();
+  const { title, price, discount, exist, category, desc } = e.target.elements;
+  const params = new URLSearchParams(window.location.search);
+  let productId = params.get("updateProduct");
+  // find the index, based on ID
+  let productIndex = products.findIndex((product) => product.id == productId);
+
+  products[productIndex] = {
+    ...products[productIndex],
+    title: title.value,
+    price: price.value,
+    discount: discount.value,
+    exist: exist.value,
+    category: category.value,
+    desc: desc.value,
+  };
+
+  localStorage.setItem("products", JSON.stringify(products));
+  location.href = "/AdminPanel/index.html";
+};
+
+findSelectedproduct();

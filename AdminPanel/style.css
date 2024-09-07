@@ -123,18 +123,39 @@ main {
   padding: 10px;
 }
 
-#table_container table td {
+#table_container table tbody td {
   padding-left: 50px;
   position: relative;
   padding: 10px;
+  border-bottom: 1px solid rgb(167, 166, 166);
+  border-bottom-style: dotted;
 }
 
-#table_container table th:nth-child(1) {
+#table_container table tbody td:nth-of-type(1) {
+  padding: 10px 0px;
+  border-bottom: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 70px;
+  height: 90px;
+}
+
+#table_container table th:nth-of-type(1) {
+  background-color: white;
+  user-select: none;
+}
+
+#table_container table tbody th:nth-child(2) {
   border-radius: 10px 0px 0px 0px;
 }
 
 #table_container table th:nth-last-child(1) {
   border-radius: 0px 10px 0px 0px;
+}
+
+.delete {
+  margin-left: 10px;
 }
 
 #add_btn,
@@ -252,6 +273,14 @@ main {
   #table_container table {
     font-size: 1.1em;
     display: none;
+  }
+
+  #table_container table tbody td:nth-of-type(1) {
+    min-width: 0;
+  }
+
+  .delete {
+    margin-left: 5px;
   }
 
   #add_btn2,
