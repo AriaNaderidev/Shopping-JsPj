@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <header>
+      <button class="header_btn" id="home_page_btn">Home page</button>
+      <button class="header_btn" id="log_in_btn">Log in</button>
+    </header>
+    <main>
+      <div class="errorBox">
+        <span class="errorMessage"></span>
+      </div>
+      <form action="" id="formLogIn">
+        <h2>Log in</h2>
+        <section class="formSec">
+          <div class="div_container">
+            <input type="text" name="user-name" id="userName" />
+            <fieldset><legend>Username</legend></fieldset>
+          </div>
+          <div class="div_container">
+            <input type="password" name="password" id="password" />
+            <fieldset><legend>Password</legend></fieldset>
+          </div>
+        </section>
+        <button class="formBtn">Log in</button>
+        <span id="loginText"
+          >If you don't have an account <a id="signUpLink">Sign up</a></span
+        >
+      </form>
+
+      <div id="table_container">
+        <table class="table" id="userTable">
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Bio</th>
+            <th>Sex</th>
+            <th>Role</th>
+          </tr>
+          <tbody id="tBody_users"></tbody>
+        </table>
+      </div>
+
+      <div id="wish_alert_container">
+        <span id="wish_list_alert">There is no favourite product</span>
+      </div>
+      <div id="user_wishlist"></div>
+    </main>
+  </body>
+</html>

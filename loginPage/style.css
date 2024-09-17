@@ -13,474 +13,387 @@ html {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
-  #main {
-    min-width: 100%;
-    min-height: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-  }
-
-  #hamber_menu {
-    font-size: 1.7em;
-    cursor: pointer;
-    margin-bottom: 10px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-
-  #tra_menu {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(44, 44, 44, 0.952);
-    color: #ebebeb;
-    position: fixed;
-    left: -100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  #tra_menu #cross {
-    align-self: flex-start;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    cursor: pointer;
-    font-size: 1.7em;
-  }
-
-  #form_container {
-    width: 90%;
-    height: 85%;
-    border-radius: 10px;
-    position: relative;
-  }
-
-  #login_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.13);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    padding: 50px 35px;
-  }
-
-  #login_form * {
-    font-family: "Poppins", sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-  }
-
-  #login_form h3 {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 42px;
-    text-align: center;
-  }
-
-  #login_form label {
-    display: block;
-    margin-top: 30px;
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  #login_form input {
-    display: block;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 300;
-  }
-
-  #login_form ::placeholder {
-    color: #e5e5e5;
-  }
-
-  #login_form button {
-    margin-top: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  /* -------------------------------------end of login tra menu -------------------------------- */
-
-  #table_container {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  #table_container table {
-    width: 100%;
-    border-radius: 20px;
-    padding: 2%;
-    text-align: center;
-    border-collapse: collapse;
-    box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
-    font-size: 1.1em;
-    align-self: flex-start;
-    margin-top: 10px;
-  }
-
-  #table_container table th {
-    background-color: rgb(206, 206, 206);
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-  }
-
-  #table_container table td {
-    padding: 5px 10px;
-  }
-
-  #table_container table th:nth-child(1) {
-    border-radius: 10px 0px 0px 0px;
-  }
-
-  #table_container table th:nth-last-child(1) {
-    border-radius: 0px 10px 0px 0px;
-  }
-
-  #table_container table tr {
-    border-bottom: 1px solid rgba(173, 173, 173, 0.658);
-    border-bottom-style: dashed;
-  }
-
-  #table_container table tr:nth-last-child(1) {
-    border-bottom: 0px;
-  }
-
-  #user_wishlist {
-    width: 95%;
-    height: 20vh;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 2%;
-    overflow: auto;
-    flex-wrap: wrap;
-    justify-self: flex-end;
-  }
-
-  .fav_product {
-    width: auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid #e5e5e5;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-
-  .fav_product img {
-    border-radius: 10%;
-    width: 20%;
-    height: 20%;
-  }
-
-  .heart {
-    cursor: pointer;
-    font-size: 1.5em;
-  }
-
-  /* ---------------------------------------end of wish list and table----------------------------------*/
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
 }
 
-@media only screen and (min-width: 768px) {
-  #main {
-    min-width: 100%;
-    min-height: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-  }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7%;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
 
-  #hamber_menu {
-    font-size: 2.6em;
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    left: 10px;
-  }
+.header_btn {
+  width: 30%;
+  max-width: 100px;
+  padding: 7px;
+  border-radius: 3.5px;
+  background-color: white;
+  border: 2px solid rgb(34, 34, 34);
+  color: rgb(34, 34, 34);
+  font-size: 0.8em;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  #tra_menu {
-    width: 70%;
-    height: 100%;
-    background-color: rgba(44, 44, 44, 0.952);
-    color: #ebebeb;
-    position: fixed;
-    left: -100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
+.errorBox {
+  width: auto;
+  padding: 15px 10px;
+  background-color: rgb(248, 77, 77);
+  border-radius: 5px;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 
-  #tra_menu #cross {
-    align-self: flex-start;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 3em;
-    cursor: pointer;
-  }
+form {
+  width: 98%;
+  height: 98%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  box-shadow: 0px 0px 10px rgb(131, 131, 131);
+  font-size: 1.1em;
+  padding: 10px;
+}
 
-  #form_container {
-    width: 90%;
-    height: 70%;
-    border-radius: 10px;
-    position: relative;
-  }
+form input,
+textarea {
+  width: 70%;
+  min-width: 150px;
+  height: 37px;
+  min-height: 20px;
+  background-color: #ececec;
+  padding: 6% 0%;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
 
-  #login_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.13);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-    padding: 50px 35px;
-  }
+form textarea {
+  resize: none;
+}
 
-  #login_form * {
-    font-family: "Poppins", sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
-  }
+form textarea:focus {
+  border-bottom: 1px solid rgb(54, 54, 54);
+  background-color: rgb(252, 252, 252);
+}
 
-  #login_form h3 {
-    font-size: 4em;
-    font-weight: 500;
-    line-height: 2em;
-    text-align: center;
-  }
+form input:focus {
+  border-bottom: 1px solid rgb(54, 54, 54);
+  background-color: rgb(252, 252, 252);
+}
 
-  #login_form label {
-    display: block;
-    margin-top: 30px;
-    font-size: 2em;
-    font-weight: 500;
-  }
+fieldset {
+  position: absolute;
+  top: -15px;
+  width: 70%;
+  height: 52px;
+  outline: none;
+  border: none;
+  font-size: 0.9em;
+  pointer-events: none;
+}
 
-  #login_form input {
-    display: block;
-    height: 50px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 8px;
-    font-size: 2.2em;
-    font-weight: 300;
-  }
+#text_area_label {
+  top: -20px;
+}
 
-  #login_form ::placeholder {
-    color: #e5e5e5;
-    font-size: 0.6em;
-  }
+.sexSec {
+  width: 30%;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
 
-  #login_form button {
-    margin-top: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 2em;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.sexSec fieldset {
+  top: -32px;
+  width: 100%;
+}
 
-  /* -------------------------------------end of login tra menu -------------------------------- */
+#sex {
+  min-width: 120px;
+  width: 100%;
+  height: 40px;
+  border-radius: 3.5px;
+  border: none;
+  outline: none;
+  background-color: #ebebeb;
+  transition: all 0.5s ease-in-out;
+}
 
-  #table_container {
-    width: 100%;
-    overflow-x: auto;
-  }
+#sex:focus {
+  background-color: #ffffff;
+}
 
-  #table_container table {
-    width: 100%;
-    border-radius: 20px;
-    padding: 2%;
-    text-align: center;
-    border-collapse: collapse;
-    box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.534);
-    font-size: 1.9em;
-    align-self: flex-start;
-    margin-top: 10px;
-  }
+.formSec {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  position: relative;
+}
 
-  #table_container table th {
-    background-color: rgb(206, 206, 206);
-    font-weight: bold;
-    font-size: 1.3em;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-  }
+.div_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: relative;
+}
 
-  #table_container table td {
-    padding: 5px 10px;
-  }
+.formBtn {
+  width: 50%;
+  height: 7%;
+  border-radius: 3.5px;
+  background-color: white;
+  border: 2px solid rgb(34, 34, 34);
+  color: rgb(34, 34, 34);
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  background-image: radial-gradient(
+    circle,
+    rgb(34, 34, 34) 30%,
+    transparent 31%
+  );
+  background-size: 0px 0px;
+  background-position: center;
+  transition: all 0.5s ease-in-out;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  #table_container table th:nth-child(1) {
-    border-radius: 10px 0px 0px 0px;
-  }
+.formBtn:hover {
+  background-size: 500% 500%;
+  color: white;
+}
 
-  #table_container table th:nth-last-child(1) {
-    border-radius: 0px 10px 0px 0px;
-  }
+.formBtn::after {
+  content: "";
+  width: 150%;
+  height: 150%;
+  border: white solid 3px;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
 
-  #table_container table tr {
-    border-bottom: 1px solid rgba(173, 173, 173, 0.658);
-    border-bottom-style: dashed;
-  }
+.formBtn:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
 
-  #table_container table tr:nth-last-child(1) {
-    border-bottom: 0px;
-  }
+#loginText {
+  font-size: 1em;
+  color: rgb(182, 182, 182);
+}
 
-  #user_wishlist {
-    width: 95%;
-    height: 20vh;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 2%;
-    overflow: auto;
-    flex-wrap: wrap;
-    justify-self: flex-end;
-  }
+#loginText a {
+  margin-left: 5px;
+  text-decoration: underline;
+  color: rgb(137, 137, 245);
+  cursor: pointer;
+}
+/* ----------------------------------end of form */
 
-  .fav_product {
-    width: auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid #e5e5e5;
-    border-radius: 20px;
-    padding: 10px;
-    margin-bottom: 10px;
+#table_container {
+  overflow-x: auto;
+  margin: 0 auto;
+  position: relative;
+  top: -30%;
+}
+
+#table_container table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  font-size: 1.2em;
+  border-radius: 10px;
+  display: none;
+}
+
+#table_container table th {
+  background-color: rgb(206, 206, 206);
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+#table_container table tbody td {
+  padding-left: 50px;
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid rgb(167, 166, 166);
+  border-bottom-style: dotted;
+}
+
+#table_container table tbody th:nth-child(1) {
+  border-radius: 10px 0px 0px 0px;
+}
+
+#table_container table th:nth-last-child(1) {
+  border-radius: 0px 10px 0px 0px;
+}
+
+/* ----------------------------------end of table--------------------------- */
+
+#user_wishlist {
+  position: absolute;
+  bottom: 10%;
+  width: 90%;
+  height: 50vh;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+
+#wish_alert_container {
+  display: none;
+  position: absolute;
+  align-self: center;
+  font-size: 1.4em;
+  color: rgb(182, 182, 182);
+  text-align: center;
+}
+
+.fav_product {
+  width: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.fav_product img {
+  border-radius: 10%;
+  width: 20%;
+  height: 20%;
+}
+
+.heart {
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+@media only screen and (min-width: 600px) {
+  form {
+    width: 60%;
+    height: 90%;
     font-size: 1.5em;
   }
 
-  .fav_product img {
-    border-radius: 10%;
-    width: 20%;
-    height: 20%;
+  form input {
+    width: 80%;
+    height: 45px;
   }
 
-  .heart {
-    cursor: pointer;
-    font-size: 1.8em;
+  #sex {
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  form {
+    width: 80%;
+    height: 90%;
+    font-size: 2em;
   }
 
-  /* ---------------------------------------end of wish list and table----------------------------------*/
+  form input {
+    width: 80%;
+    height: 55px;
+  }
+
+  .sexSec {
+    width: 50%;
+    font-size: 1.1em;
+  }
+
+  .sexSec fieldset {
+    top: -45px;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
-  #tra_menu #cross {
-    align-self: flex-start;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 3.5em;
-    cursor: pointer;
-  }
-
-  #login_form h3 {
-    font-size: 3.4em;
-    font-weight: 500;
-    line-height: 3em;
-    text-align: center;
-  }
-
-  #login_form label {
-    display: block;
-    margin-top: 30px;
-    font-size: 2.5em;
-    font-weight: 500;
-  }
-
-  #login_form input {
-    height: 80px;
-    font-size: 2em;
-  }
-
-  #login_form ::placeholder {
-    font-size: 0.8em;
-  }
-
-  #login_form button {
-    margin-top: 45px;
-    padding: 20px 0;
-    font-size: 2em;
-  }
-
-  /* -------------------------------------end of login tra menu -------------------------------- */
-
-  #table_container table {
-    width: 100%;
-    height: 40vh;
-    font-size: 1.6em;
-  }
-
-  #user_wishlist {
+  form {
     width: 80%;
-    height: 23vh;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 2%;
-    overflow: auto;
-    flex-wrap: wrap;
-    justify-self: flex-end;
+    height: 80%;
+    font-size: 2em;
   }
-  /* ---------------------------------------end of wish list and table----------------------------------*/
+
+  .sexSec {
+    width: 50%;
+    font-size: 1.05em;
+  }
+
+  .sexSec fieldset {
+    top: -45px;
+  }
+
+  #text_area_label {
+    top: -40px;
+  }
+}
+
+@media (min-width: 1000px) and (orientation: landscape) {
+  form {
+    width: 40%;
+    height: 90%;
+    font-size: 1em;
+  }
+
+  form input {
+    width: 70%;
+    height: 30px;
+  }
+
+  .sexSec fieldset {
+    top: -23px;
+  }
+
+  .sexSec {
+    width: 50%;
+    font-size: 1.05em;
+  }
+
+  #text_area_label {
+    top: -23px;
+  }
 }

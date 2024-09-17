@@ -1,4 +1,3 @@
-//username,full name,  email , password , gender ;
 let form = document.querySelector("#form");
 let errorMessage = document.querySelector(".errorMessage");
 let errorBox = document.querySelector(".errorBox");

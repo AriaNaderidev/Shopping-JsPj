@@ -12,89 +12,55 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <main id="main">
-      <i class="fa-solid fa-bars" id="hamber_menu"></i>
-      <div id="tra_menu">
-        <i class="fa-regular fa-circle-xmark" id="cross"></i>
-        <div id="form_container">
-          <form id="login_form" action="">
-            <h3>Login Here</h3>
-
-            <label for="username">Username</label>
-            <input type="text" placeholder="Email or Phone" id="username" />
-
-            <label for="password">Password</label>
-            <input type="password" placeholder="Password" id="password" />
-
-            <button>Log In</button>
-          </form>
-        </div>
+    <main>
+      <div class="errorBox">
+        <span class="errorMessage"></span>
       </div>
-      <div id="table_container">
-        <table>
-          <tr>
-            <th>Id</th>
-            <th>Username</th>
-            <th>E-mail</th>
-            <th>Bio</th>
-            <th>Role</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Aria</td>
-            <td>arianaderi249@gmail.com</td>
-            <td>hey , im using this website!</td>
-            <td>admin</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>mmd</td>
-            <td>csacsa111@gmail.com</td>
-            <td>hey , im using this website!</td>
-            <td>user</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>reza</td>
-            <td>dcasd44@gmail.com</td>
-            <td>hey , im using this website!</td>
-            <td>user</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>abol</td>
-            <td>sscds1321313@gmail.com</td>
-            <td>hey , im using this website!</td>
-            <td>user</td>
-          </tr>
-        </table>
-      </div>
-      <div id="user_wishlist">
-        <section class="fav_product">
-          <h1>Rolex</h1>
-          <h3>1000$</h3>
-          <img src="/loginPage/pics/wristwatch2.jpg" alt="" />
-          <span id="like_btn"><i class="fa-regular fa-heart heart"></i></span>
+      <form action="" id="formSignUp">
+        <h2>Sign up</h2>
+        <section class="formSec">
+          <div class="div_container">
+            <input type="text" name="user-name" id="userName" />
+            <fieldset><legend>Username</legend></fieldset>
+          </div>
+          <div class="div_container">
+            <input type="password" name="password" id="password" />
+            <fieldset><legend>Password</legend></fieldset>
+          </div>
         </section>
-        <section class="fav_product">
-          <h1>Rolex</h1>
-          <h3>1000$</h3>
-          <img src="/loginPage/pics/wristwatch3.jpg" alt="" />
-          <span id="like_btn"><i class="fa-regular fa-heart heart"></i></span>
+        <section class="formSec">
+          <div class="div_container">
+            <input type="text" name="full-name" id="fullName" />
+            <fieldset><legend>Full name</legend></fieldset>
+          </div>
+          <div class="div_container">
+            <input type="email" name="email" id="email" />
+            <fieldset><legend>Email</legend></fieldset>
+          </div>
         </section>
-        <section class="fav_product">
-          <h1>Rolex</h1>
-          <h3>1000$</h3>
-          <img src="/loginPage/pics/wristwatch4.jpg" alt="" />
-          <span id="like_btn"><i class="fa-regular fa-heart heart"></i></span>
+        <section class="formSec">
+          <div class="div_container">
+            <textarea name="bio" id="bio" cols="30" rows="3"></textarea>
+            <fieldset id="text_area_label"><legend>Bio</legend></fieldset>
+          </div>
         </section>
-        <section class="fav_product">
-          <h1>Rolex</h1>
-          <h3>1000$</h3>
-          <img src="/loginPage/pics/wristwatch5.jpg" alt="" />
-          <span id="like_btn"><i class="fa-regular fa-heart heart"></i></span>
+        <section class="sexSec">
+          <div class="div_container">
+            <select name="sex" id="sex">
+              <option class="op" value="Male">Male</option>
+              <option class="op" value="Female">Female</option>
+              <option class="op" value="Prefer not to say">
+                Prefer not to say
+              </option>
+            </select>
+            <fieldset><legend>Sex</legend></fieldset>
+          </div>
         </section>
-      </div>
+        <button class="formBtn">Sign up</button>
+        <span id="loginText"
+          >If you have an account <a id="logInLink">Login</a></span
+        >
+      </form>
     </main>
   </body>
 </html>

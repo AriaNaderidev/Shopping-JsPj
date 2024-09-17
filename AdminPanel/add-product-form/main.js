@@ -53,7 +53,7 @@ const addProduct = (e) => {
   }
 };
 
-//-------------------------------------------------------end of adding new product
+//------------------------------end of adding new product-------------------------
 
 const findSelectedproduct = () => {
   const { title, price, discount, exist, category, desc } = form.elements;
