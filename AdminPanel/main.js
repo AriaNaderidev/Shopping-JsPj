@@ -5,7 +5,7 @@ let body = document.querySelector("body");
 let hamberIcon = document.querySelector("#hamber_menu");
 
 const redirectTOHomePage = () => {
-  location.href = "/homePage/index.html";
+  location.href = "/index.html";
 };
 
 homeBtn.forEach((btn) => {

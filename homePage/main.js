@@ -102,7 +102,7 @@ const insertProducts = () => {
          } fa-heart heart" id="heart" onClick="likeProduct(${
         product.id
       }, this)" ></span></span>
-        <img src="products-pics/wristwatch2.jpg" alt="product" />
+        <img src="/homePage/products-pics/wristwatch2.jpg" alt="product" />
         <div class="info">
         <h1 id="title">${product.title}</h1>
         <h3 class="${priceClassName}">${product.price}$</h3>
@@ -121,7 +121,7 @@ const redirectToAdminPanel = () => {
 
 // * event listeners
 hamberIcon.addEventListener("click", toggleTra);
-crossIcon.addEventListener("click", toggleTra());
+crossIcon.addEventListener("click", toggleTra);
 searchBtn.addEventListener("click", searchBtnEffect);
 adminPanelBtn.addEventListener("click", redirectToAdminPanel);
 document.addEventListener("DOMContentLoaded", insertProducts);

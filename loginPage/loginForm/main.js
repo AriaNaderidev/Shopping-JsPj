@@ -14,8 +14,7 @@ let logInBtn = document.querySelector("#log_in_btn");
 let logedInUsers = JSON.parse(localStorage.getItem("logedInUsers")) || "";
 
 const redirectToHomePage = () => {
-  location.href = "";
-  location.href = "/homePage/index.html";
+  location.href = "/index.html";
 };
 
 homePageBtn.addEventListener("click", redirectToHomePage);
