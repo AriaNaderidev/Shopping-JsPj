@@ -36,13 +36,13 @@ const searchBtnEffect = () => {
 
 // * using inner (cleanup function) for toggling.
 const toggleTra = () => {
-  tarMenu.style.left = 0;
-  body.style.overflow = "hidden";
-
-  return () => {
+  if (tarMenu.style.left !== 0 + "px") {
+    tarMenu.style.left = 0;
+    body.style.overflow = "hidden";
+  } else {
     tarMenu.style.left = -100 + "%";
     body.style.overflow = "auto";
-  };
+  }
 };
 
 // * end of elements animation
@@ -116,7 +116,7 @@ const insertProducts = () => {
 
 // * redirect function (to the admin page)
 const redirectToAdminPanel = () => {
-  location.href = "../AdminPanel/index.html";
+  location.href = "/adminPanel.html";
 };
 
 // * event listeners
@@ -127,8 +127,5 @@ adminPanelBtn.addEventListener("click", redirectToAdminPanel);
 document.addEventListener("DOMContentLoaded", insertProducts);
 
 logInBtn.forEach((btn) => {
-  btn.addEventListener(
-    "click",
-    () => (location.href = "../loginPage/loginForm/index.html")
-  );
+  btn.addEventListener("click", () => (location.href = "/loginPage.html"));
 });

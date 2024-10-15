@@ -49,7 +49,7 @@ const addUsers = (e) => {
     fullName.value = "";
     email.value = "";
     sex.value = "";
-    location.href = "/AdminPanel/index.html";
+    location.href = "/adminPanel.html";
   }
 };
 
@@ -88,7 +88,7 @@ const updateUserHanlder = (e) => {
   };
 
   localStorage.setItem("users", JSON.stringify(users));
-  location.href = "/AdminPanel/index.html";
+  location.href = "/adminPanel.html";
 };
 
 findSelectedUser();

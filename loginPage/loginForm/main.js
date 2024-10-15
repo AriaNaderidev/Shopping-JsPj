@@ -14,7 +14,7 @@ let logInBtn = document.querySelector("#log_in_btn");
 let logedInUsers = JSON.parse(localStorage.getItem("logedInUsers")) || "";
 
 const redirectToHomePage = () => {
-  location.href = "/index.html";
+  location.href = "/home.html";
 };
 
 homePageBtn.addEventListener("click", redirectToHomePage);
@@ -40,7 +40,7 @@ const redirectTOLogIngPage = () => {
 logInBtn.addEventListener("click", redirectTOLogIngPage);
 
 const signUpLinkRedirect = () => {
-  location.href = "../index.html";
+  location.href = "/loginPage.html";
 };
 
 signUpLink.addEventListener("click", signUpLinkRedirect);

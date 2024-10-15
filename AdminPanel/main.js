@@ -5,7 +5,7 @@ let body = document.querySelector("body");
 let hamberIcon = document.querySelector("#hamber_menu");
 
 const redirectTOHomePage = () => {
-  location.href = "/index.html";
+  location.href = "/home.html";
 };
 
 homeBtn.forEach((btn) => {
@@ -68,7 +68,7 @@ renderUser(usersData);
 //-------------------------------------------------update user
 
 const updateUserRow = (userID) => {
-  window.location.href = `./add-user-form/index.html?updateUser=${userID}`;
+  window.location.href = `/addUsers.html?updateUser=${userID}`;
 };
 //-------------------------------------render products
 const renderProducts = (products) => {
@@ -104,16 +104,16 @@ function addUpdatedProductsToLocalStorage(data) {
 renderProducts(productsData);
 //---------------------------------------------update product
 const updateProductRow = (productID) => {
-  window.location.href = `./add-product-form/index.html?updateProduct=${productID}`;
+  window.location.href = `/addProducts.html?updateProduct=${productID}`;
 };
 //-
 //---------------------------------------
 const addNewProductTOTable = () => {
-  location.href = "/AdminPanel/add-product-form/index.html";
+  location.href = "/addProducts.html";
 };
 
 const addNewUserTOTable = () => {
-  location.href = "/AdminPanel/add-user-form/index.html";
+  location.href = "/addUsers.html";
 };
 
 addBtn.addEventListener("click", addNewProductTOTable);

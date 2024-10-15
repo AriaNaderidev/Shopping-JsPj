@@ -49,7 +49,7 @@ const addProduct = (e) => {
     discount.value = "";
     category.value = "";
     desc.value = "";
-    location.href = "/AdminPanel/index.html";
+    location.href = "/adminPanel.html";
   }
 };
 
@@ -91,7 +91,7 @@ const updateProductHanlder = (e) => {
   };
 
   localStorage.setItem("products", JSON.stringify(products));
-  location.href = "/AdminPanel/index.html";
+  location.href = "/adminPanel.html";
 };
 
 findSelectedproduct();

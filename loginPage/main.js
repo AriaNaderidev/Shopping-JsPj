@@ -5,7 +5,7 @@ const users = JSON.parse(localStorage.getItem("users")) || [];
 let logInLink = document.querySelector("#logInLink");
 
 const logInLinkRedirect = () => {
-  location.href = "./loginForm/index.html";
+  location.href = "/loginForm.html";
 };
 
 logInLink.addEventListener("click", logInLinkRedirect);
@@ -41,7 +41,7 @@ const signUp = (e) => {
     errorMessage.textContent = "";
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
-    location.href = "./loginForm/index.html";
+    location.href = "/loginForm.html";
   }
 };
 
