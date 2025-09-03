@@ -1,6 +1,7 @@
 let signUpLink = document.querySelector("#signUpLink");
 let formLogIn = document.querySelector("#formLogIn");
 let users = JSON.parse(localStorage.getItem("users")) || [];
+
 let tBody = document.querySelector("#tBody_users");
 let errorMessage = document.querySelector(".errorMessage");
 let errorBox = document.querySelector(".errorBox");
@@ -12,6 +13,26 @@ let homePageBtn = document.querySelector("#home_page_btn");
 let main = document.querySelector("main");
 let logInBtn = document.querySelector("#log_in_btn");
 let logedInUsers = JSON.parse(localStorage.getItem("logedInUsers")) || "";
+
+const adminExists = users.some(
+  (user) => user.userName === "admin" && user.password === "12341234"
+);
+
+if (!adminExists) {
+  const adminUser = {
+    id: "admin-id-001",
+    userName: "admin",
+    password: "12341234",
+    fullName: "Administrator",
+    email: "admin@example.com",
+    bio: "Master of the panel",
+    sex: "Other",
+    role: "Admin",
+  };
+
+  users.push(adminUser);
+  localStorage.setItem("users", JSON.stringify(users));
+}
 
 const redirectToHomePage = () => {
   location.href = "/home.html";
@@ -46,7 +67,6 @@ const signUpLinkRedirect = () => {
 signUpLink.addEventListener("click", signUpLinkRedirect);
 
 const checkLoggedInUser = () => {
-  // debugger;
   if (logedInUsers) {
     showUserInfo();
   } else {
@@ -57,12 +77,10 @@ const checkLoggedInUser = () => {
 document.addEventListener("DOMContentLoaded", checkLoggedInUser);
 
 const showUserInfo = () => {
-  // debugger;
   const likedProducts = JSON.parse(localStorage.getItem("likedProducts")) || {};
   const products = JSON.parse(localStorage.getItem("products")) || [];
 
   const user = users.find((user) => user.id === logedInUsers);
-  console.log(user);
 
   if (user)
     tBody.innerHTML = `
@@ -112,7 +130,6 @@ const showUserInfo = () => {
 };
 
 const logIn = (e) => {
-  // debugger;
   e.preventDefault();
   const { userName, password } = e.target.elements;
 
@@ -122,6 +139,11 @@ const logIn = (e) => {
   if (userNameInput === "" || passWordInput === "") {
     errorMessage.textContent = "You should fill information fields!";
     errorBox.style.display = "flex";
+    return;
+  }
+
+  if (userNameInput === "admin" && passWordInput === "12341234") {
+    window.location.href = "/adminPanel.html";
     return;
   }
 
