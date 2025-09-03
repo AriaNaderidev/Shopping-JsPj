@@ -12,7 +12,7 @@ let header = document.querySelector("header");
 let homePageBtn = document.querySelector("#home_page_btn");
 let main = document.querySelector("main");
 let logInBtn = document.querySelector("#log_in_btn");
-let logedInUsers = JSON.parse(localStorage.getItem("logedInUsers")) || "";
+let logedInUsers = localStorage.getItem("logedInUsers") || "";
 
 const adminExists = users.some(
   (user) => user.userName === "admin" && user.password === "12341234"
@@ -77,9 +77,7 @@ const checkLoggedInUser = () => {
 document.addEventListener("DOMContentLoaded", checkLoggedInUser);
 
 const showUserInfo = () => {
-  const likedProducts = JSON.parse(localStorage.getItem("likedProducts")) || {};
   const products = JSON.parse(localStorage.getItem("products")) || [];
-
   const user = users.find((user) => user.id === logedInUsers);
 
   if (user)
@@ -105,7 +103,10 @@ const showUserInfo = () => {
   userWishList.style.display = "none";
   wishListAlertContainer.style.display = "none";
 
-  if (logedInUsers in likedProducts) {
+  const likedProducts = JSON.parse(localStorage.getItem("likedProducts")) || {};
+  const hasKey = logedInUsers in likedProducts;
+
+  if (hasKey) {
     wishListAlertContainer.style.display = "none";
     userWishList.style.display = "flex";
 
@@ -158,7 +159,7 @@ const logIn = (e) => {
     errorMessage.textContent = "";
     errorBox.style.display = "none";
     localStorage.removeItem("logedInUsers");
-    localStorage.setItem("logedInUsers", JSON.stringify(user.id));
+    localStorage.setItem("logedInUsers", user.id); // just store the string
 
     userName.value = "";
     password.value = "";

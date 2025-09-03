@@ -30,41 +30,48 @@ const searchBtnEffect = () => {
     searchInp.style.opacity = 0;
     searchInp.style.pointerEvents = "none";
     searchInp.value = "";
-    renderProducts(products); // reset view when search closed
   }
 };
 
 // * using inner (cleanup function) for toggling.
 const toggleTra = () => {
-  if (tarMenu.style.left !== "0px") {
-    tarMenu.style.left = "0px";
+  if (tarMenu.style.left !== 0 + "px") {
+    tarMenu.style.left = 0;
     body.style.overflow = "hidden";
   } else {
-    tarMenu.style.left = "-100%";
+    tarMenu.style.left = -100 + "%";
     body.style.overflow = "auto";
   }
 };
 
-// * like a product
+// * end of elements animation
+
 const likeProduct = (productId, el) => {
+  // check if a user is logged in
   if (logedInUsers) {
+    // check if the logged in user has previusly liked products
     if (likedProduct[logedInUsers]) {
       el.classList.remove("fa-solid");
       el.classList.add("fa-regular");
-
+      // check if user has liked the product. so, we remove the product from their liked products.
       if (likedProduct[logedInUsers]?.includes(productId)) {
-        let newLikedProducts = likedProduct[logedInUsers].filter(
-          (id) => id !== productId
-        );
+        let newLikedProducts = likedProduct[logedInUsers];
+        if (el.classList.contains("fa-solid")) {
+          el.classList.remove("fa-solid");
+          el.classList.add("fa-regular");
+        }
+        newLikedProducts = newLikedProducts.filter((id) => id !== productId);
         likedProduct[logedInUsers] = newLikedProducts;
         localStorage.setItem("likedProducts", JSON.stringify(likedProduct));
       } else {
+        // else: user hasn't liked the product yet
         el.classList.remove("fa-regular");
         el.classList.add("fa-solid");
         likedProduct[logedInUsers].push(productId);
         localStorage.setItem("likedProducts", JSON.stringify(likedProduct));
       }
     } else {
+      // else: user doesn't exist in the likedProducts object, so we add them. and add the productId as their first liked product.
       el.classList.remove("fa-regular");
       el.classList.add("fa-solid");
       likedProduct[logedInUsers] = [productId];
@@ -73,63 +80,44 @@ const likeProduct = (productId, el) => {
   }
 };
 
-// * render products
-const renderProducts = (list) => {
-  productsView.innerHTML = "";
+// * insert products into page view
+const insertProducts = () => {
+  if (products.length)
+    products.forEach((product) => {
+      let priceClassName = product.discount ? "discounted-price" : "";
+      let discountedPriceClassName =
+        product.discount <= 0 || !product.discount
+          ? "hideDiscount"
+          : "showDiscount";
+      let discountNumber = (product.price * product.discount) / 100;
+      let newPrice = product.price - discountNumber;
 
-  if (!list.length) {
-    productsView.innerHTML = `<p>No products found 😕</p>`;
-    return;
-  }
-
-  list.forEach((product) => {
-    let priceClassName = product.discount ? "discounted-price" : "";
-    let discountedPriceClassName =
-      product.discount <= 0 || !product.discount
-        ? "hideDiscount"
-        : "showDiscount";
-    let discountNumber = (product.price * product.discount) / 100;
-    let newPrice = product.price - discountNumber;
-
-    productsView.innerHTML += `
+      productsView.innerHTML += `
       <section class="products">
-        <span id="like_btn">
-          <span class="${
-            likedProduct[logedInUsers]?.includes(product.id)
-              ? "fa-solid"
-              : "fa-regular"
-          } fa-heart heart" id="heart" onClick="likeProduct(${
-      product.id
-    }, this)" ></span>
-        </span>
+         <span id="like_btn"><span class="${
+           likedProduct[logedInUsers]?.includes(product.id)
+             ? "fa-solid"
+             : "fa-regular"
+         } fa-heart heart" id="heart" onClick="likeProduct(${
+        product.id
+      }, this)" ></span></span>
         <img src="/homePage/products-pics/wristwatch2.jpg" alt="product" />
         <div class="info">
-          <h1 id="title">${product.title}</h1>
-          <h3 class="${priceClassName}">${product.price}$</h3>
-          <h3 class="${discountedPriceClassName}">${newPrice}$</h3>
-          <h3>${product.category}</h3>
+        <h1 id="title">${product.title}</h1>
+        <h3 class="${priceClassName}">${product.price}$</h3>
+        <h3 class="${discountedPriceClassName}">${newPrice}$</h3>
+        <h3>${product.category}</h3>
         </div>
       </section>
-    `;
-  });
+      `;
+    });
 };
 
-// * search products
-const searchProducts = (value) => {
-  let filtered = products.filter(
-    (product) =>
-      product.title.toLowerCase().includes(value.toLowerCase()) ||
-      product.category.toLowerCase().includes(value.toLowerCase())
-  );
-  renderProducts(filtered);
-};
-
-// ?  ----- event listeners
+// * event listeners
 hamberIcon.addEventListener("click", toggleTra);
 crossIcon.addEventListener("click", toggleTra);
 searchBtn.addEventListener("click", searchBtnEffect);
-searchInp.addEventListener("input", (e) => searchProducts(e.target.value));
-document.addEventListener("DOMContentLoaded", () => renderProducts(products));
+document.addEventListener("DOMContentLoaded", insertProducts);
 
 logInBtn.forEach((btn) => {
   btn.addEventListener("click", () => (location.href = "/loginPage.html"));
